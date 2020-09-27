@@ -1,0 +1,11 @@
+sensors:
+  - name: "Poubelle verte"
+    frequency: "weekly"
+    collection_days:
+    - tue
+    expire_after: '07:00'
+  - name: "Poubelle jaune"
+    frequency: "even-weeks"
+    collection_days:
+    - thu
+    expire_after: '07:00'

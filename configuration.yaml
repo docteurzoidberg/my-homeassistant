@@ -1,7 +1,6 @@
-
-# Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
-media_source: 
+media_source:
+stream:
 wake_on_lan:
 homeassistant:
   customize: !include customize.yaml
@@ -16,27 +15,9 @@ input_boolean: !include input_boolean.yaml
 binary_sensor: !include binary_sensor.yaml
 sensor: !include sensor.yaml
 camera: !include camera.yaml
-octoprint: !include octoprint.yaml
 
 tts:
   - platform: google_translate
-  
-influxdb:
-  host: localhost
-  port: 8086
-  database: homeassistant
-  username: !secret influxdb_username
-  password: !secret influxdb_password
-  max_retries: 3
-  default_measurement: state
-  override_measurement: state
-  include:
-    domains:
-    - sensor
-    - input_boolean
-    - binary_sensor
-    - switch
-    - media_player
 
 history:
   include:
@@ -50,12 +31,16 @@ history:
 recorder:
   purge_keep_days: 5
   purge_interval: 2
-  
+
 alarm_control_panel:
   - platform: manual
     name: Alarme
     code: !secret alarm_code
     trigger_time: 100
+
+influxdb: !include influxdb.yaml
+octoprint: !include octoprint.yaml
+garbage_collection: !include garbage_collection.yaml
 
 sonoff:
   username: !secret sonoff_username
@@ -67,20 +52,5 @@ spotify:
 
 google:
     client_id: !secret google_calendar_clientid
-    client_secret: google_calendar_secret
+    client_secret: !secret google_calendar_secret
 
-garbage_collection:
-  sensors:
-  - name: "Poubelle verte"
-    frequency: "weekly"
-    collection_days:
-    - tue
-    expire_after: '07:00'
-  - name: "Poubelle jaune"
-    frequency: "even-weeks"
-    collection_days:
-    - thu
-    expire_after: '07:00'
-    
-
-stream:

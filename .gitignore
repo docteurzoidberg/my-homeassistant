@@ -6,9 +6,10 @@ node-red
 .google.token
 .HA_VERSION
 secrets.yaml
-./*.db
+*.db
 ./*.json
-./*.log
+*.log
 /**/__pycache__
 __pycache__/
 *.py[cod]
+google_calendars.yaml

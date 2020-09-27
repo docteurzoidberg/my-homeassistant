@@ -1,0 +1,16 @@
+host: localhost
+port: 8086
+database: homeassistant
+username: !secret influxdb_username
+password: !secret influxdb_password
+max_retries: 3
+default_measurement: state
+override_measurement: state
+include:
+  domains:
+  - sensor
+  - input_boolean
+  - binary_sensor
+  - switch
+  - media_player
+  - maree
