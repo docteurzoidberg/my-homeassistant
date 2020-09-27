@@ -1,0 +1,5 @@
+
+- platform: template
+  sensors:
+    alarm_active:
+      value_template: "{{ is_state('input_boolean.alarme_en_cours', 'on') }}"

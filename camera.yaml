@@ -1,0 +1,14 @@
+- platform: mjpeg
+  name: OctoPrint0
+  still_image_url: http://192.168.77.200/webcam/?action=snapshot
+  mjpeg_url: http://192.168.77.200/webcam/?action=stream
+
+- platform: mjpeg
+  name: OctoPrint1
+  still_image_url: http://192.168.77.201/webcam/?action=snapshot
+  mjpeg_url: http://192.168.77.201/webcam/?action=stream
+
+- platform: mjpeg
+  name: OctoPrint2
+  still_image_url: http://192.168.77.202/webcam/?action=snapshot
+  mjpeg_url: http://192.168.77.202/webcam/?action=stream

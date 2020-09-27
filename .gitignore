@@ -1,0 +1,14 @@
+.cloud
+.storage
+tts
+esphome
+node-red
+.google.token
+.HA_VERSION
+secrets.yaml
+./*.db
+./*.json
+./*.log
+/**/__pycache__
+__pycache__/
+*.py[cod]

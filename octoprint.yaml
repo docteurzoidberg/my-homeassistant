@@ -1,0 +1,15 @@
+- host: 192.168.77.200
+  api_key: !secret octoprint_api0
+  name: FLSUN3D
+  bed: true
+  number_of_tools: 1
+- host: 192.168.77.201
+  api_key: !secret octoprint_api1
+  name: Anycubic Predator
+  bed: true
+  number_of_tools: 1
+- host: 192.168.77.202
+  api_key: !secret octoprint_api2
+  name: Anycubic Chiron
+  bed: true
+  number_of_tools: 1

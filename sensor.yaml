@@ -1,0 +1,5 @@
+- platform: seventeentrack
+  username: !secret seventeentrack_username
+  password: !secret seventeentrack_password
+#  - platform: openhardwaremonitor
+#    host: 192.168.77.20
