@@ -1,0 +1,245 @@
+type: picture-elements
+image: /local/floorplan/floorplan.png
+elements:
+
+#Lampe1
+
+  #Lampe 1: mode manuel
+  - type: conditional
+    conditions:
+      - entity: input_select.tentabeu_place1_mode
+        state: manuel
+    elements:
+      - entity: binary_sensor.tentabeu_light1_active
+        title: Lampe 1 - Manuel
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        image: /local/floorplan/1x1_trans.png
+        state_image:
+          'off': /local/floorplan/overlay_lampe1_off.png
+          'on': /local/floorplan/overlay_lampe1_on.png
+        style:
+          left: 40.9%
+          top: 30.3%
+          width: 44%
+          opacity: 1
+        type: image
+  #Lampe 1: mode programmé
+  - type: conditional
+    conditions:
+      - entity: input_select.tentabeu_place1_mode
+        state: programmé
+    elements:
+      - entity: binary_sensor.tentabeu_light1_active
+        title: Lampe 1 - Programmé
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        image: /local/floorplan/1x1_trans.png
+        state_image:
+          'off': /local/floorplan/overlay_lampe1_prog.png
+          'on': /local/floorplan/overlay_lampe1_on.png
+        style:
+          left: 40.9%
+          top: 30.3%
+          width: 44%
+          opacity: 1
+        type: image
+
+# Ventilo1
+
+  # Ventilo1 mode manuel
+  - type: conditional
+    conditions:
+      - entity: input_select.tentabeu_place1_mode
+        state: manuel
+    elements:
+      - entity: input_boolean.tentabeu_fan1
+        title: Ventilo 1 - Manuel
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        image: /local/floorplan/1x1_trans.png
+        state_image:
+          'on': /local/floorplan/overlay_ventilo1_on.png
+          'off': /local/floorplan/overlay_ventilo1_off.png
+        style:
+          left: 40%
+          top: 7.6%
+          width: 33%
+          opacity: 1
+        type: image
+  # Ventilo1 mode programmé
+  - type: conditional
+    conditions:
+      - entity: input_select.tentabeu_place1_mode
+        state: programmé
+    elements:
+      - entity: input_boolean.tentabeu_fan1
+        title: Ventilo 1 - Programmé
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        image: /local/floorplan/1x1_trans.png
+        state_image:
+          'on': /local/floorplan/overlay_ventilo1_on.png
+          'off': /local/floorplan/overlay_ventilo1_prog.png
+        style:
+          left: 40%
+          top: 7.6%
+          width: 33%
+          opacity: 1
+        type: image
+
+#Water1
+
+  # Water mode manuel
+  - type: conditional
+    conditions:
+      - entity: input_select.tentabeu_place1_mode
+        state: manuel
+    elements:
+      - entity: input_boolean.tentabeu_water1
+        title: Arrosage 1 - Manuel
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        image: /local/floorplan/1x1_trans.png
+        state_image:
+          'on': /local/floorplan/overlay_arrosage1_on.png
+          'off': /local/floorplan/overlay_arrosage1_off.png
+        style:
+          left: 63.3%
+          bottom: '-6.6%'
+          width: 26%
+          opacity: 1
+        type: image
+  # Water mode programmé
+  - type: conditional
+    conditions:
+      - entity: input_select.tentabeu_place1_mode
+        state: programmé
+    elements:
+      - entity: input_boolean.tentabeu_water1
+        title: Arrosage 1 - Programmé
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        image: /local/floorplan/1x1_trans.png
+        state_image:
+          'on': /local/floorplan/overlay_arrosage1_on.png
+          'off': /local/floorplan/overlay_arrosage1_prog.png
+        style:
+          left: 63.3%
+          bottom: '-6.6%'
+          width: 26%
+          opacity: 1
+        type: image
+
+
+#Icones place1
+
+ #Temperature
+
+  #Icone temperature
+  - type: state-icon
+    entity: sensor.tentabeu_espcam_1_temperature
+    style:
+      bottom: 0%
+      left: 5%
+
+  #Label temperature
+  - type: state-label
+    entity: sensor.tentabeu_espcam_1_temperature
+    style:
+      bottom: 0%
+      left: 18%
+ #Humiditée
+
+  #Icone humidite
+  - type: state-icon
+    entity: sensor.tentabeu_espcam_1_humidity
+    style:
+      bottom: 5%
+      left: 5%
+  #Label humidite
+  - type: state-label
+    entity: sensor.tentabeu_espcam_1_humidity
+    style:
+      bottom: 5%
+      left: 18%
+
+ #Camera
+
+  #Icone camera
+  - type: icon
+    title: Camera
+    icon: 'mdi:cctv'
+    entity: camera.tentabeu_espcam_1_camera
+    style:
+      bottom: 12%
+      left: 5%
+  #Label camera
+  - type: state-label
+    entity: camera.tentabeu_espcam_1_camera
+    style:
+      bottom: 10%
+      left: 18%
+
+ #Ventilation
+
+  #Icone ventilation
+  - type: state-icon
+    title: Ventilation
+    entity: input_boolean.tentabeu_fan1
+    icon: 'mdi:fan'
+    style:
+      left: 32%
+      bottom: 0%
+  #Label ventilation
+  - type: state-label
+    entity: input_boolean.tentabeu_fan1
+    style:
+      bottom: 0%
+      left: 40%
+
+ #Arrosage
+
+  #Icone arrosage
+  - type: state-icon
+    title: Arrosage
+    entity: input_boolean.tentabeu_water1
+    icon: 'mdi:water'
+    style:
+      left: 32%
+      bottom: 5%
+  #Label arrosage
+  - type: state-label
+    entity: input_boolean.tentabeu_water1
+    style:
+      bottom: 5%
+      left: 40%
+
+ #Lumiere
+
+  #Icone lumiere
+  - type: state-icon
+    title: Lumiere
+    entity: input_boolean.tentabeu_light1
+    icon: 'mdi:lightbulb'
+    style:
+      left: 32%
+      bottom: 10%
+  #Label lumiere
+  - type: state-label
+    entity: input_boolean.tentabeu_light1
+    style:
+      bottom: 10%
+      left: 40%

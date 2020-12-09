@@ -1,0 +1,10 @@
+{
+    "domain": "cozytouch",
+    "name": "Cozytouch",
+    "config_flow": true,
+    "documentation": "https://github.com/cyr-ius/hass-cozytouch",
+    "issue_tracker": "https://github.com/cyr-ius/hass-cozytouch/issues",
+    "requirements": ["cozytouchpy==1.9.9"],
+    "dependencies": [],
+    "codeowners": ["@biker91620", "@cyr-ius"]
+}
